@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:gyf="http://schemas.android.com/apk/res/com.example.tabfragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp" >
+
+    <com.example.utils.CycleImageView
+        android:id="@+id/cycle_img"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        gyf:src="@drawable/p3"
+        gyf:type="circle" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/cycle_img"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/cycle_img"
+        android:textColor="@color/black"
+        android:text="仓鼠1号" 
+        android:textStyle="bold"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/title"
+        android:layout_marginRight="12dp"
+        android:text="下午16:28"
+        android:textColor="@color/font_grey" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/title"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="18dp"
+        android:text="今天吃点什么好呢？"
+        android:textColor="@color/font_grey"
+        android:singleLine="true" />
+
+</RelativeLayout>

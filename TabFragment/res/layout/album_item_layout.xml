@@ -1,0 +1,74 @@
+<com.example.utils.FlipLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/flip_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp" >
+
+    <RelativeLayout
+        android:id="@+id/font_layout"
+        android:layout_width="340dp"
+        android:layout_height="340dp"
+        android:layout_gravity="center" >
+
+        <ImageView
+            android:id="@+id/font_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/font" />
+
+        <Button
+            android:id="@+id/paly_all"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignRight="@id/font_img"
+            android:layout_margin="10dp"
+            android:background="@drawable/play_pink" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/back_layout"
+        android:layout_width="340dp"
+        android:layout_height="340dp"
+        android:layout_gravity="center"
+        android:background="#000000"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/small_font_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/font" />
+
+        <TextView
+            android:id="@+id/artist_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/small_font_img"
+            android:layout_toRightOf="@id/small_font_img"
+            android:text="Adele"
+            android:textColor="@color/pink"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/album_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/artist_name"
+            android:layout_toRightOf="@id/small_font_img"
+            android:text="21"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ListView
+            android:id="@+id/song_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/small_font_img"
+            android:divider="@null" >
+        </ListView>
+    </RelativeLayout>
+
+</com.example.utils.FlipLayout>

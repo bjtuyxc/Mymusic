@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Musick</string>
+    <string name="hello_world">Hello world!</string>
+	
+	<string name="music">音乐</string>
+	<string name="share">分享</string>
+	<string name="setting">设置</string>
+    <string name="message">信息</string>
+    <string name="search">搜索</string>
+    <string name="more">更多</string>
+    <string name="upload">上传</string>
+    <string name="holder">收藏</string>
+    <string name="open">打开</string>
+    <string name="delete">删除</string>
+    
+    <string-array name="drawer_item">
+        <item>我喜爱的</item>
+        <item>歌曲排行</item>
+        <item>随便听听</item>
+        <item>导入歌单</item>
+        <item>本地音乐</item>
+        <item>云音乐</item>
+    </string-array>
+</resources>
+
