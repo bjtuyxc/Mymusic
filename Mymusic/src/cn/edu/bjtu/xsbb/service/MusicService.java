@@ -65,8 +65,7 @@ import cn.edu.bjtu.xsbb.util.LyricDownloadManager;
 import cn.edu.bjtu.xsbb.util.LyricLoadHelper;
 import cn.edu.bjtu.xsbb.util.AudioFocusHelper.MusicFocusable;
 import cn.edu.bjtu.xsbb.util.LyricLoadHelper.LyricListener;
-
-import com.lq.xpressmusic.R;
+import cn.edu.bjtu.xsbb.mymusic.R;
 
 /**
  * 这是处理音乐回放的服务，在应用中对媒体的所有处理都交给这个服务。

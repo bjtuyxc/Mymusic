@@ -9,10 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import cn.edu.bjtu.xsbb.mymusic.R;
 import cn.edu.bjtu.xsbb.util.Constant;
 
 import com.google.analytics.tracking.android.EasyTracker;
-import com.lq.xpressmusic.R;
+
 import com.umeng.analytics.MobclickAgent;
 
 /**

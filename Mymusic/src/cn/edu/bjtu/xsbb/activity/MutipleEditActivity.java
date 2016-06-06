@@ -39,7 +39,7 @@ import cn.edu.bjtu.xsbb.service.MusicService.MusicPlaybackLocalBinder;
 import cn.edu.bjtu.xsbb.util.Constant;
 
 import com.google.analytics.tracking.android.EasyTracker;
-import com.lq.xpressmusic.R;
+import cn.edu.bjtu.xsbb.mymusic.R;
 import com.umeng.analytics.MobclickAgent;
 
 /**

@@ -9,7 +9,7 @@ import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 
 import com.google.analytics.tracking.android.EasyTracker;
-import com.lq.xpressmusic.R;
+import cn.edu.bjtu.xsbb.mymusic.R;
 import com.umeng.analytics.MobclickAgent;
 
 /**

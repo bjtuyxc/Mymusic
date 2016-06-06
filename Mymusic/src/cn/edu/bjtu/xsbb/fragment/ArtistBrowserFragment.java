@@ -37,7 +37,7 @@ import cn.edu.bjtu.xsbb.entity.ArtistInfo;
 import cn.edu.bjtu.xsbb.loader.ArtistInfoRetrieveLoader;
 import cn.edu.bjtu.xsbb.util.Constant;
 
-import com.lq.xpressmusic.R;
+import cn.edu.bjtu.xsbb.mymusic.R;
 
 /**
  * @author lq 2013-6-1 lq2625304@gmail.com

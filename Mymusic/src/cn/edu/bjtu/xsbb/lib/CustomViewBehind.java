@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 
 import cn.edu.bjtu.xsbb.lib.SlidingMenu.CanvasTransformer;
 
-import com.lq.xpressmusic.R;
+import cn.edu.bjtu.xsbb.mymusic.R;
 
 public class CustomViewBehind extends ViewGroup {
 

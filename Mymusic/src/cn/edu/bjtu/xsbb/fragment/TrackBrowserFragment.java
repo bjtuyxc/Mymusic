@@ -79,8 +79,7 @@ import cn.edu.bjtu.xsbb.service.MusicService;
 import cn.edu.bjtu.xsbb.service.MusicService.MusicPlaybackLocalBinder;
 import cn.edu.bjtu.xsbb.util.Constant;
 import cn.edu.bjtu.xsbb.util.StringHelper;
-
-import com.lq.xpressmusic.R;
+import cn.edu.bjtu.xsbb.mymusic.R;
 
 /**
  * 读取并显示设备外存上的音乐文件

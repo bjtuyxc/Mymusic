@@ -42,7 +42,7 @@ import cn.edu.bjtu.xsbb.util.TimeHelper;
 import cn.edu.bjtu.xsbb.util.LyricLoadHelper.LyricListener;
 
 import com.google.analytics.tracking.android.EasyTracker;
-import com.lq.xpressmusic.R;
+import cn.edu.bjtu.xsbb.mymusic.R;
 import com.umeng.analytics.MobclickAgent;
 
 /**

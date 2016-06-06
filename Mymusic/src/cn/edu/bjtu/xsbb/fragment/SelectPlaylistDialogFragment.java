@@ -30,8 +30,7 @@ import cn.edu.bjtu.xsbb.adapter.PlaylistAdapter;
 import cn.edu.bjtu.xsbb.dao.PlaylistDAO;
 import cn.edu.bjtu.xsbb.entity.PlaylistInfo;
 import cn.edu.bjtu.xsbb.loader.PlaylistInfoRetrieveLoader;
-
-import com.lq.xpressmusic.R;
+import cn.edu.bjtu.xsbb.mymusic.R;
 
 /**
  * @author lq 2013-6-1 lq2625304@gmail.com

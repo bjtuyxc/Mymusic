@@ -29,7 +29,7 @@ import android.widget.RelativeLayout;
 
 import cn.edu.bjtu.xsbb.lib.CustomViewAbove.OnPageChangeListener;
 
-import com.lq.xpressmusic.R;
+import cn.edu.bjtu.xsbb.mymusic.R;
 
 public class SlidingMenu extends RelativeLayout {
 

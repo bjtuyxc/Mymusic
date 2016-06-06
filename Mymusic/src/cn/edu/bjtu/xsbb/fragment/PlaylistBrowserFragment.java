@@ -56,8 +56,7 @@ import cn.edu.bjtu.xsbb.service.MusicService;
 import cn.edu.bjtu.xsbb.service.MusicService.MusicPlaybackLocalBinder;
 import cn.edu.bjtu.xsbb.util.Constant;
 import cn.edu.bjtu.xsbb.util.StringHelper;
-
-import com.lq.xpressmusic.R;
+import cn.edu.bjtu.xsbb.mymusic.R;
 
 /**
  * @author lq 2013-6-1 lq2625304@gmail.com

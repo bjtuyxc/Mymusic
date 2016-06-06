@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import cn.edu.bjtu.xsbb.entity.LyricSentence;
 
-import com.lq.xpressmusic.R;
+import cn.edu.bjtu.xsbb.mymusic.R;
 /**
  * @author lq 2013-6-1 lq2625304@gmail.com
  * */
