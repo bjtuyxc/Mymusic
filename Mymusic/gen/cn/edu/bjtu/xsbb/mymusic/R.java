@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.lq.xpressmusic;
+package cn.edu.bjtu.xsbb.mymusic;
 
 public final class R {
     public static final class anim {
@@ -630,20 +630,20 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SlidingMenu_behindOffset com.lq.xpressmusic:behindOffset}</code></td><td></td></tr>
-           <tr><td><code>{@link #SlidingMenu_behindScrollScale com.lq.xpressmusic:behindScrollScale}</code></td><td></td></tr>
-           <tr><td><code>{@link #SlidingMenu_behindWidth com.lq.xpressmusic:behindWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #SlidingMenu_fadeDegree com.lq.xpressmusic:fadeDegree}</code></td><td></td></tr>
-           <tr><td><code>{@link #SlidingMenu_fadeEnabled com.lq.xpressmusic:fadeEnabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #SlidingMenu_mode com.lq.xpressmusic:mode}</code></td><td></td></tr>
-           <tr><td><code>{@link #SlidingMenu_selectorDrawable com.lq.xpressmusic:selectorDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #SlidingMenu_selectorEnabled com.lq.xpressmusic:selectorEnabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #SlidingMenu_shadowDrawable com.lq.xpressmusic:shadowDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #SlidingMenu_shadowWidth com.lq.xpressmusic:shadowWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #SlidingMenu_touchModeAbove com.lq.xpressmusic:touchModeAbove}</code></td><td></td></tr>
-           <tr><td><code>{@link #SlidingMenu_touchModeBehind com.lq.xpressmusic:touchModeBehind}</code></td><td></td></tr>
-           <tr><td><code>{@link #SlidingMenu_viewAbove com.lq.xpressmusic:viewAbove}</code></td><td></td></tr>
-           <tr><td><code>{@link #SlidingMenu_viewBehind com.lq.xpressmusic:viewBehind}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_behindOffset cn.edu.bjtu.xsbb.mymusic:behindOffset}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_behindScrollScale cn.edu.bjtu.xsbb.mymusic:behindScrollScale}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_behindWidth cn.edu.bjtu.xsbb.mymusic:behindWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_fadeDegree cn.edu.bjtu.xsbb.mymusic:fadeDegree}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_fadeEnabled cn.edu.bjtu.xsbb.mymusic:fadeEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_mode cn.edu.bjtu.xsbb.mymusic:mode}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_selectorDrawable cn.edu.bjtu.xsbb.mymusic:selectorDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_selectorEnabled cn.edu.bjtu.xsbb.mymusic:selectorEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_shadowDrawable cn.edu.bjtu.xsbb.mymusic:shadowDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_shadowWidth cn.edu.bjtu.xsbb.mymusic:shadowWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_touchModeAbove cn.edu.bjtu.xsbb.mymusic:touchModeAbove}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_touchModeBehind cn.edu.bjtu.xsbb.mymusic:touchModeBehind}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_viewAbove cn.edu.bjtu.xsbb.mymusic:viewAbove}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_viewBehind cn.edu.bjtu.xsbb.mymusic:viewBehind}</code></td><td></td></tr>
            </table>
            @see #SlidingMenu_behindOffset
            @see #SlidingMenu_behindScrollScale
@@ -667,7 +667,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f01000c, 0x7f01000d
         };
         /**
-          <p>This symbol is the offset where the {@link com.lq.xpressmusic.R.attr#behindOffset}
+          <p>This symbol is the offset where the {@link cn.edu.bjtu.xsbb.mymusic.R.attr#behindOffset}
           attribute's value can be found in the {@link #SlidingMenu} array.
 
 
@@ -679,11 +679,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.lq.xpressmusic:behindOffset
+          @attr name cn.edu.bjtu.xsbb.mymusic:behindOffset
         */
         public static final int SlidingMenu_behindOffset = 3;
         /**
-          <p>This symbol is the offset where the {@link com.lq.xpressmusic.R.attr#behindScrollScale}
+          <p>This symbol is the offset where the {@link cn.edu.bjtu.xsbb.mymusic.R.attr#behindScrollScale}
           attribute's value can be found in the {@link #SlidingMenu} array.
 
 
@@ -693,11 +693,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.lq.xpressmusic:behindScrollScale
+          @attr name cn.edu.bjtu.xsbb.mymusic:behindScrollScale
         */
         public static final int SlidingMenu_behindScrollScale = 5;
         /**
-          <p>This symbol is the offset where the {@link com.lq.xpressmusic.R.attr#behindWidth}
+          <p>This symbol is the offset where the {@link cn.edu.bjtu.xsbb.mymusic.R.attr#behindWidth}
           attribute's value can be found in the {@link #SlidingMenu} array.
 
 
@@ -709,11 +709,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.lq.xpressmusic:behindWidth
+          @attr name cn.edu.bjtu.xsbb.mymusic:behindWidth
         */
         public static final int SlidingMenu_behindWidth = 4;
         /**
-          <p>This symbol is the offset where the {@link com.lq.xpressmusic.R.attr#fadeDegree}
+          <p>This symbol is the offset where the {@link cn.edu.bjtu.xsbb.mymusic.R.attr#fadeDegree}
           attribute's value can be found in the {@link #SlidingMenu} array.
 
 
@@ -723,11 +723,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.lq.xpressmusic:fadeDegree
+          @attr name cn.edu.bjtu.xsbb.mymusic:fadeDegree
         */
         public static final int SlidingMenu_fadeDegree = 11;
         /**
-          <p>This symbol is the offset where the {@link com.lq.xpressmusic.R.attr#fadeEnabled}
+          <p>This symbol is the offset where the {@link cn.edu.bjtu.xsbb.mymusic.R.attr#fadeEnabled}
           attribute's value can be found in the {@link #SlidingMenu} array.
 
 
@@ -737,11 +737,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.lq.xpressmusic:fadeEnabled
+          @attr name cn.edu.bjtu.xsbb.mymusic:fadeEnabled
         */
         public static final int SlidingMenu_fadeEnabled = 10;
         /**
-          <p>This symbol is the offset where the {@link com.lq.xpressmusic.R.attr#mode}
+          <p>This symbol is the offset where the {@link cn.edu.bjtu.xsbb.mymusic.R.attr#mode}
           attribute's value can be found in the {@link #SlidingMenu} array.
 
 
@@ -754,21 +754,21 @@ containing a value of this type.
 <tr><td><code>left</code></td><td>0</td><td></td></tr>
 <tr><td><code>right</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name com.lq.xpressmusic:mode
+          @attr name cn.edu.bjtu.xsbb.mymusic:mode
         */
         public static final int SlidingMenu_mode = 0;
         /**
-          <p>This symbol is the offset where the {@link com.lq.xpressmusic.R.attr#selectorDrawable}
+          <p>This symbol is the offset where the {@link cn.edu.bjtu.xsbb.mymusic.R.attr#selectorDrawable}
           attribute's value can be found in the {@link #SlidingMenu} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.lq.xpressmusic:selectorDrawable
+          @attr name cn.edu.bjtu.xsbb.mymusic:selectorDrawable
         */
         public static final int SlidingMenu_selectorDrawable = 13;
         /**
-          <p>This symbol is the offset where the {@link com.lq.xpressmusic.R.attr#selectorEnabled}
+          <p>This symbol is the offset where the {@link cn.edu.bjtu.xsbb.mymusic.R.attr#selectorEnabled}
           attribute's value can be found in the {@link #SlidingMenu} array.
 
 
@@ -778,21 +778,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.lq.xpressmusic:selectorEnabled
+          @attr name cn.edu.bjtu.xsbb.mymusic:selectorEnabled
         */
         public static final int SlidingMenu_selectorEnabled = 12;
         /**
-          <p>This symbol is the offset where the {@link com.lq.xpressmusic.R.attr#shadowDrawable}
+          <p>This symbol is the offset where the {@link cn.edu.bjtu.xsbb.mymusic.R.attr#shadowDrawable}
           attribute's value can be found in the {@link #SlidingMenu} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.lq.xpressmusic:shadowDrawable
+          @attr name cn.edu.bjtu.xsbb.mymusic:shadowDrawable
         */
         public static final int SlidingMenu_shadowDrawable = 8;
         /**
-          <p>This symbol is the offset where the {@link com.lq.xpressmusic.R.attr#shadowWidth}
+          <p>This symbol is the offset where the {@link cn.edu.bjtu.xsbb.mymusic.R.attr#shadowWidth}
           attribute's value can be found in the {@link #SlidingMenu} array.
 
 
@@ -804,11 +804,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.lq.xpressmusic:shadowWidth
+          @attr name cn.edu.bjtu.xsbb.mymusic:shadowWidth
         */
         public static final int SlidingMenu_shadowWidth = 9;
         /**
-          <p>This symbol is the offset where the {@link com.lq.xpressmusic.R.attr#touchModeAbove}
+          <p>This symbol is the offset where the {@link cn.edu.bjtu.xsbb.mymusic.R.attr#touchModeAbove}
           attribute's value can be found in the {@link #SlidingMenu} array.
 
 
@@ -821,11 +821,11 @@ containing a value of this type.
 <tr><td><code>margin</code></td><td>0</td><td></td></tr>
 <tr><td><code>fullscreen</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name com.lq.xpressmusic:touchModeAbove
+          @attr name cn.edu.bjtu.xsbb.mymusic:touchModeAbove
         */
         public static final int SlidingMenu_touchModeAbove = 6;
         /**
-          <p>This symbol is the offset where the {@link com.lq.xpressmusic.R.attr#touchModeBehind}
+          <p>This symbol is the offset where the {@link cn.edu.bjtu.xsbb.mymusic.R.attr#touchModeBehind}
           attribute's value can be found in the {@link #SlidingMenu} array.
 
 
@@ -838,27 +838,27 @@ containing a value of this type.
 <tr><td><code>margin</code></td><td>0</td><td></td></tr>
 <tr><td><code>fullscreen</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name com.lq.xpressmusic:touchModeBehind
+          @attr name cn.edu.bjtu.xsbb.mymusic:touchModeBehind
         */
         public static final int SlidingMenu_touchModeBehind = 7;
         /**
-          <p>This symbol is the offset where the {@link com.lq.xpressmusic.R.attr#viewAbove}
+          <p>This symbol is the offset where the {@link cn.edu.bjtu.xsbb.mymusic.R.attr#viewAbove}
           attribute's value can be found in the {@link #SlidingMenu} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.lq.xpressmusic:viewAbove
+          @attr name cn.edu.bjtu.xsbb.mymusic:viewAbove
         */
         public static final int SlidingMenu_viewAbove = 1;
         /**
-          <p>This symbol is the offset where the {@link com.lq.xpressmusic.R.attr#viewBehind}
+          <p>This symbol is the offset where the {@link cn.edu.bjtu.xsbb.mymusic.R.attr#viewBehind}
           attribute's value can be found in the {@link #SlidingMenu} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.lq.xpressmusic:viewBehind
+          @attr name cn.edu.bjtu.xsbb.mymusic:viewBehind
         */
         public static final int SlidingMenu_viewBehind = 2;
     };
