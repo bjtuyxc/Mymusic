@@ -10,7 +10,7 @@ import android.support.v4.app.FragmentActivity;
 
 import com.google.analytics.tracking.android.EasyTracker;
 import cn.edu.bjtu.xsbb.mymusic.R;
-import com.umeng.analytics.MobclickAgent;
+
 
 /**
  * @author lq 2013-6-1 lq2625304@gmail.com
@@ -26,7 +26,7 @@ public class SplashActivity extends FragmentActivity {
 		setContentView(R.layout.welcome);
 		mHandler.sendEmptyMessageDelayed(0, mDelayMillis);
 
-		initUmengSDK();
+		
 	}
 
 	@Override
@@ -38,13 +38,13 @@ public class SplashActivity extends FragmentActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		MobclickAgent.onResume(this);
+		
 	}
 
 	@Override
 	protected void onPause() {
 		super.onPause();
-		MobclickAgent.onPause(this);
+		
 	}
 
 	@Override
@@ -58,11 +58,7 @@ public class SplashActivity extends FragmentActivity {
 		// 什么也不做，在欢迎界面禁止用户回退
 	}
 
-	private void initUmengSDK() {
-		MobclickAgent.openActivityDurationTrack(true);
-		MobclickAgent.updateOnlineConfig(this);
-		MobclickAgent.onError(this);
-	}
+
 
 	private static class MyHandler extends Handler {
 		// 使用弱引用，避免Handler造成的内存泄露(Message持有Handler的引用，内部定义的Handler类持有外部类的引用)
