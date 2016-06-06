@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="menu_mymusic">
+        <item>本地音乐</item>
+        <item>歌手</item>
+        <item>专辑</item>
+        <item>文件夹</item>
+        <item>收藏列表</item>
+    </string-array>
+    <string-array name="menu_othersettings">
+        <item>系统设置</item>
+        <item>意见反馈</item>
+        <item>支持作者</item>
+        <item>退出</item>
+    </string-array>
+
+</resources>

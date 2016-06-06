@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lq.xpressmusic"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="14" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <meta-data
+        android:name="UMENG_APPKEY"
+        android:value="52f316f856240ba0883ab4ec" >
+    </meta-data>
+    <meta-data
+        android:name="UMENG_CHANNEL"
+        android:value="GitHub" >
+    </meta-data>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="cn.edu.bjtu.xsbb.activity.MainContentActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+            android:uiOptions="splitActionBarWhenNarrow" >
+        </activity>
+        <activity
+            android:name="cn.edu.bjtu.xsbb.activity.PlayerActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name="cn.edu.bjtu.xsbb.activity.MutipleEditActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name="cn.edu.bjtu.xsbb.activity.PlayQueueActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar" >
+        </activity>
+        <activity
+            android:name="cn.edu.bjtu.xsbb.activity.MyPreferenceActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name="cn.edu.bjtu.xsbb.activity.FolderChooseActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name="cn.edu.bjtu.xsbb.activity.FeedbackActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name="cn.edu.bjtu.xsbb.activity.SplashActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="cn.edu.bjtu.xsbb.service.MusicService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.lq.musicplayer.action.PLAY" />
+                <action android:name="com.lq.musicplayer.action.PAUSE" />
+                <action android:name="com.lq.musicplayer.action.STOP" />
+                <action android:name="com.lq.musicplayer.action.PREVIOUS" />
+                <action android:name="com.lq.musicplayer.action.NEXT" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="cn.edu.bjtu.xsbb.receiver.MediaButtonReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="cn.edu.bjtu.xsbb.receiver.AudioBecomingNoisyReceiver" >
+            <intent-filter>
+                <action android:name="android.media.AUDIO_BECOMING_NOISY" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
