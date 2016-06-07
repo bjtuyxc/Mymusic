@@ -3,7 +3,7 @@
     android:id="@+id/list_item_section"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="#ff454545"
+    android:background="#660099"
     android:orientation="vertical" >
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="15dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#aac4c4c4"
+        android:textColor="#FFFFFF"
         android:textIsSelectable="false" />
 
     <View
