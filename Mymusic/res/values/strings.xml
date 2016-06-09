@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">随心而乐</string>
+    <string name="app_name">XSBB Music</string>
     <string name="my_music">我的音乐</string>
     <string name="other_functions">其他功能</string>
     <string name="there_is_no_song_yet">没有歌曲</string>

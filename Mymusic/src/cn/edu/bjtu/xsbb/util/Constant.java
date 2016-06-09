@@ -13,7 +13,7 @@ public final class Constant {
 	public static final String LYRIC_SAVE_FOLDER_PATH = Environment
 			.getExternalStorageDirectory()
 			+ File.separator
-			+ "随心而乐"
+			+ "XSBB_Music"
 			+ File.separator + "lyric" + File.separator;
 	public static final String AUTHOR_EMAIL = "lq2625304@gmail.com";
 	public static final String PLAY_MODE = "play_mode";
