@@ -204,6 +204,7 @@ public class PlayerActivity extends FragmentActivity {
 	}
 
 	/** 对各个控件设置相关参数、监听器等 */
+	@SuppressWarnings("deprecation")
 	private void initViewsSetting() {
 		// 手势设置----------------------------------------------
 		// 左滑切换至主页
@@ -214,6 +215,8 @@ public class PlayerActivity extends FragmentActivity {
 				// 从左向右滑动
 				if (e1.getX() - e2.getX() < -120) {
 					switchToMain();
+					return true;
+				} else if (e2.getX() - e1.getX() < -120 ) {
 					return true;
 				}
 				return false;

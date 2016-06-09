@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/background_picture"
-        android:drawable="@drawable/player_bg">
+        android:drawable="@drawable/player_bg_2">
     </item>
     <item
         android:id="@+id/background_mask"
