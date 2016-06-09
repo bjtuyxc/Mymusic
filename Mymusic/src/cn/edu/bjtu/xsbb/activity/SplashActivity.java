@@ -18,7 +18,7 @@ import cn.edu.bjtu.xsbb.mymusic.R;
 public class SplashActivity extends FragmentActivity {
 
 	private MyHandler mHandler = new MyHandler(this);
-	private final int mDelayMillis = 2000;
+	private final int mDelayMillis = 4000;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
