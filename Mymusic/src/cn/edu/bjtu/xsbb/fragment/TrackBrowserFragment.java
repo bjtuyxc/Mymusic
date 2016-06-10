@@ -1,6 +1,5 @@
 package cn.edu.bjtu.xsbb.fragment;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -24,7 +23,6 @@ import android.os.Environment;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore.Audio.Media;
-import android.provider.MediaStore.Audio.Playlists;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
@@ -70,8 +68,6 @@ import cn.edu.bjtu.xsbb.adapter.TrackAdapter;
 import cn.edu.bjtu.xsbb.dao.PlaylistDAO;
 import cn.edu.bjtu.xsbb.entity.AlbumInfo;
 import cn.edu.bjtu.xsbb.entity.ArtistInfo;
-import cn.edu.bjtu.xsbb.entity.FolderInfo;
-import cn.edu.bjtu.xsbb.entity.PlaylistInfo;
 import cn.edu.bjtu.xsbb.entity.TrackInfo;
 import cn.edu.bjtu.xsbb.listener.OnPlaybackStateChangeListener;
 import cn.edu.bjtu.xsbb.loader.MusicRetrieveLoader;
@@ -135,8 +131,6 @@ public class TrackBrowserFragment extends Fragment implements
 	private List<TrackInfo> mShowData = new ArrayList<TrackInfo>();
 
 	private ArtistInfo mArtistInfo = null;
-	private FolderInfo mFolderInfo = null;
-	private PlaylistInfo mPlaylistInfo = null;
 	private AlbumInfo mAlbumInfo = null;
 	private TrackInfo mToDeleteTrack = null;
 	private TrackInfo mPlayingTrack = null;
@@ -325,8 +319,6 @@ public class TrackBrowserFragment extends Fragment implements
 		mAdapter = null;
 		mActivity = null;
 		mArtistInfo = null;
-		mPlaylistInfo = null;
-		mFolderInfo = null;
 		mAlbumInfo = null;
 		mCurrentPlayInfo = null;
 		mShowData.clear();
@@ -495,16 +487,6 @@ public class TrackBrowserFragment extends Fragment implements
 				case Constant.START_FROM_ARTIST:
 					data.putString(Constant.TITLE, mArtistInfo.getArtistName());
 					data.putInt(Constant.PARENT, Constant.START_FROM_ARTIST);
-					break;
-				case Constant.START_FROM_FOLER:
-					data.putString(Constant.TITLE, mFolderInfo.getFolderName());
-					data.putInt(Constant.PARENT, Constant.START_FROM_FOLER);
-					break;
-				case Constant.START_FROM_PLAYLIST:
-					data.putString(Constant.TITLE,
-							mPlaylistInfo.getPlaylistName());
-					data.putInt(Constant.PARENT, Constant.START_FROM_PLAYLIST);
-					data.putInt(Constant.PLAYLIST_ID, mPlaylistInfo.getId());
 					break;
 				case Constant.START_FROM_ALBUM:
 					data.putString(Constant.TITLE, mAlbumInfo.getAlbumName());
@@ -855,26 +837,13 @@ public class TrackBrowserFragment extends Fragment implements
 		if (mArtistInfo != null) {
 			select.append(" and " + Media.ARTIST + " = '"
 					+ mArtistInfo.getArtistName() + "'");
-		} else if (mFolderInfo != null) {
-			select.append(" and " + Media.DATA + " like '"
-					+ mFolderInfo.getFolderPath() + File.separator + "%'");
-		} else if (mPlaylistInfo != null) {
-			select.append(" and " + Media._ID + " in (select "
-					+ Playlists.Members.AUDIO_ID
-					+ " from audio_playlists_map where "
-					+ Playlists.Members.PLAYLIST_ID + "="
-					+ mPlaylistInfo.getId() + ")");
-		} else if (mAlbumInfo != null) {
+		}else if (mAlbumInfo != null) {
 			select.append(" and " + Media.ALBUM_ID + " = "
 					+ mAlbumInfo.getAlbumId());
 		}
 
 		MusicRetrieveLoader loader = new MusicRetrieveLoader(getActivity(),
 				select.toString(), null, mSortOrder);
-
-		if (mFolderInfo != null) {
-			loader.setFolderFilterPattern(mFolderInfo.getFolderPath());
-		}
 
 		// 创建并返回一个Loader
 		return loader;
@@ -917,14 +886,6 @@ public class TrackBrowserFragment extends Fragment implements
 				break;
 			case Constant.START_FROM_ARTIST:
 				mView_Title.setText(mArtistInfo.getArtistName() + "("
-						+ data.size() + ")");
-				break;
-			case Constant.START_FROM_FOLER:
-				mView_Title.setText(mFolderInfo.getFolderName() + "("
-						+ data.size() + ")");
-				break;
-			case Constant.START_FROM_PLAYLIST:
-				mView_Title.setText(mPlaylistInfo.getPlaylistName() + "("
 						+ data.size() + ")");
 				break;
 			case Constant.START_FROM_ALBUM:
@@ -983,28 +944,6 @@ public class TrackBrowserFragment extends Fragment implements
 								R.string.unknown_artist)
 								+ "(" + mArtistInfo.getNumberOfTracks() + ")");
 					}
-					setTitleLeftDrawable();
-				}
-				break;
-			case Constant.START_FROM_FOLER:
-				// 如果是从文件夹列表里启动的
-				mFolderInfo = args.getParcelable(FolderInfo.class
-						.getSimpleName());
-				if (mFolderInfo != null) {
-					// 更新标题
-					mView_Title.setText(mFolderInfo.getFolderName() + "("
-							+ mFolderInfo.getNumOfTracks() + ")");
-					setTitleLeftDrawable();
-				}
-				break;
-			case Constant.START_FROM_PLAYLIST:
-				// 如果是从播放列表里启动的
-				mPlaylistInfo = args.getParcelable(PlaylistInfo.class
-						.getSimpleName());
-				if (mPlaylistInfo != null) {
-					// 更新标题
-					mView_Title.setText(mPlaylistInfo.getPlaylistName() + "("
-							+ mPlaylistInfo.getNumOfMembers() + ")");
 					setTitleLeftDrawable();
 				}
 				break;
@@ -1189,9 +1128,6 @@ public class TrackBrowserFragment extends Fragment implements
 			switch (getArguments().getInt(Constant.PARENT)) {
 			case Constant.START_FROM_PLAYLIST:
 				// 从播放列表移除歌曲，不会删除文件
-				isDeleted = PlaylistDAO.removeTrackFromPlaylist(getActivity()
-						.getContentResolver(), mPlaylistInfo.getId(),
-						new long[] { mToDeleteTrack.getId() });
 				if (isDeleted) {
 					// 提示删除成功
 					Toast.makeText(getActivity(),
