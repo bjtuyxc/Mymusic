@@ -795,12 +795,6 @@ public class TrackBrowserFragment extends Fragment implements
 				.getMenuInfo();
 		Log.i(TAG, "menuInfo:" + menuInfo);
 		switch (item.getItemId()) {
-		case CONTEXT_MENU_ADD_TO_PLAYLIST:
-			// 弹出选择播放列表的窗口
-			df = SelectPlaylistDialogFragment.newInstance(new long[] { mAdapter
-					.getItem(menuInfo.position).getId() });
-			df.show(getFragmentManager(), null);
-			break;
 		case CONTEXT_MENU_CHECK_DETAIL:
 			// 弹出歌曲详细信息的窗口
 			df = TrackDetailDialogFragment.newInstance(mAdapter

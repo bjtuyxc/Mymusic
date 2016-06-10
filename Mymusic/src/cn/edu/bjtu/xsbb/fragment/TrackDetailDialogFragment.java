@@ -14,9 +14,6 @@ import cn.edu.bjtu.xsbb.util.StringHelper;
 import cn.edu.bjtu.xsbb.util.TimeHelper;
 import cn.edu.bjtu.xsbb.mymusic.R;
 
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class TrackDetailDialogFragment extends DialogFragment {
 	private static final String TAG = TrackDetailDialogFragment.class
 			.getSimpleName();

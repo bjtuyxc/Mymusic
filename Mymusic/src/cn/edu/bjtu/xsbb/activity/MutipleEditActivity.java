@@ -33,7 +33,6 @@ import cn.edu.bjtu.xsbb.adapter.TrackMutipleChooseAdapter;
 import cn.edu.bjtu.xsbb.dao.PlaylistDAO;
 import cn.edu.bjtu.xsbb.entity.TrackInfo;
 import cn.edu.bjtu.xsbb.fragment.PromptDialogFragment;
-import cn.edu.bjtu.xsbb.fragment.SelectPlaylistDialogFragment;
 import cn.edu.bjtu.xsbb.service.MusicService;
 import cn.edu.bjtu.xsbb.service.MusicService.MusicPlaybackLocalBinder;
 import cn.edu.bjtu.xsbb.util.Constant;
@@ -250,12 +249,6 @@ public class MutipleEditActivity extends FragmentActivity implements
 				Toast.makeText(MutipleEditActivity.this,
 						R.string.please_select_add_song_first,
 						Toast.LENGTH_SHORT).show();
-			} else {
-				// 弹出选择播放列表的窗口
-				long[] selectedAudioIds = mAdapter.getSelectedAudioIds();
-				DialogFragment df = SelectPlaylistDialogFragment
-						.newInstance(selectedAudioIds);
-				df.show(getSupportFragmentManager(), null);
 			}
 			break;
 		case R.id.play_list_later:

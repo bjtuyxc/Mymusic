@@ -42,9 +42,6 @@ import cn.edu.bjtu.xsbb.util.Constant;
 
 import cn.edu.bjtu.xsbb.mymusic.R;
 
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class AlbumBrowserFragment extends Fragment implements
 		LoaderCallbacks<List<AlbumInfo>> {
 	private static final String TAG = AlbumBrowserFragment.class

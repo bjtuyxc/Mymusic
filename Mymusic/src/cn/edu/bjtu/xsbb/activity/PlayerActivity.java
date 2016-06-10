@@ -30,7 +30,6 @@ import android.widget.TextView;
 import cn.edu.bjtu.xsbb.adapter.LyricAdapter;
 import cn.edu.bjtu.xsbb.entity.LyricSentence;
 import cn.edu.bjtu.xsbb.entity.TrackInfo;
-import cn.edu.bjtu.xsbb.fragment.SelectPlaylistDialogFragment;
 import cn.edu.bjtu.xsbb.fragment.TrackDetailDialogFragment;
 import cn.edu.bjtu.xsbb.listener.OnPlaybackStateChangeListener;
 import cn.edu.bjtu.xsbb.service.MusicService;
@@ -354,13 +353,6 @@ public class PlayerActivity extends FragmentActivity {
 							DialogFragment df = null;
 
 							switch (item.getItemId()) {
-							case R.id.track_addto:
-								// 弹出选择播放列表的窗口
-								df = SelectPlaylistDialogFragment
-										.newInstance(new long[] { mPlaySong
-												.getId() });
-								df.show(getSupportFragmentManager(), null);
-								break;
 							case R.id.track_info:
 								// 弹出歌曲详细信息的窗口
 								if (mPlaySong != null) {

@@ -12,9 +12,6 @@ import android.view.ContextThemeWrapper;
 import cn.edu.bjtu.xsbb.activity.MainContentActivity;
 import cn.edu.bjtu.xsbb.mymusic.R;
 
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class PromptDialogFragment extends DialogFragment {
 	private final String TAG = this.getClass().getSimpleName();
 	private static final String TITLE = "title";
