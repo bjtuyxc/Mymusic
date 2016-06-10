@@ -81,11 +81,6 @@ import cn.edu.bjtu.xsbb.util.Constant;
 import cn.edu.bjtu.xsbb.util.StringHelper;
 import cn.edu.bjtu.xsbb.mymusic.R;
 
-/**
- * 读取并显示设备外存上的音乐文件
- * 
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class TrackBrowserFragment extends Fragment implements
 		LoaderManager.LoaderCallbacks<List<TrackInfo>>, OnItemClickListener,
 		OnBackKeyPressedListener {
@@ -449,21 +444,6 @@ public class TrackBrowserFragment extends Fragment implements
 												Fragment.instantiate(
 														getActivity(),
 														AlbumBrowserFragment.class
-																.getName(),
-														null))
-										.addToBackStack(null).commit();
-							}
-							break;
-						case R.id.classify_by_folder:
-							if (null != getParentFragment()
-									&& getParentFragment() instanceof FrameLocalMusicFragment) {
-								getFragmentManager()
-										.beginTransaction()
-										.replace(
-												R.id.frame_for_nested_fragment,
-												Fragment.instantiate(
-														getActivity(),
-														FolderBrowserFragment.class
 																.getName(),
 														null))
 										.addToBackStack(null).commit();
