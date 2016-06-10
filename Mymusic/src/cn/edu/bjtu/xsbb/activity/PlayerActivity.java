@@ -44,10 +44,6 @@ import cn.edu.bjtu.xsbb.util.LyricLoadHelper.LyricListener;
 import com.google.analytics.tracking.android.EasyTracker;
 import cn.edu.bjtu.xsbb.mymusic.R;
 
-
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class PlayerActivity extends FragmentActivity {
 	public static final String TAG = PlayerActivity.class.getSimpleName();
 

@@ -14,9 +14,7 @@ import android.widget.TextView;
 
 import cn.edu.bjtu.xsbb.entity.TrackInfo;
 import cn.edu.bjtu.xsbb.mymusic.R;
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
+
 public class TrackAdapter extends BaseAdapter implements OnClickListener {
 	private Context mContext = null;
 	/** 数据源 */

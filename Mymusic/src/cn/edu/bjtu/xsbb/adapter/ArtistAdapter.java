@@ -13,9 +13,7 @@ import android.widget.TextView;
 import cn.edu.bjtu.xsbb.entity.ArtistInfo;
 
 import cn.edu.bjtu.xsbb.mymusic.R;
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
+
 public class ArtistAdapter extends BaseAdapter {
 	private List<ArtistInfo> mData = null;
 	private Context mContext = null;

@@ -34,10 +34,6 @@ import cn.edu.bjtu.xsbb.util.Constant;
 import com.google.analytics.tracking.android.EasyTracker;
 import cn.edu.bjtu.xsbb.mymusic.R;
 
-
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class PlayQueueActivity extends FragmentActivity implements
 		OnItemClickListener {
 	private static final String TAG = PlayQueueActivity.class.getSimpleName();

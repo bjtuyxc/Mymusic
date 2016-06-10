@@ -18,9 +18,7 @@ import android.widget.TextView;
 import cn.edu.bjtu.xsbb.entity.AlbumInfo;
 
 import cn.edu.bjtu.xsbb.mymusic.R;
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
+
 public class AlbumAdapter extends BaseAdapter {
 	private static final String TAG = AlbumAdapter.class.getSimpleName();
 

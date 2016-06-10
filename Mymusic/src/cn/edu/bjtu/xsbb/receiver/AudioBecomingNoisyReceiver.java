@@ -21,12 +21,6 @@ import android.content.Intent;
 
 import cn.edu.bjtu.xsbb.service.MusicService;
 
-/**
- * Receives broadcasted intents. In particular, we are interested in the
- * android.media.AUDIO_BECOMING_NOISY intent, which is broadcast, for example,
- * when the user disconnects the headphones. This class works because we are
- * declaring it in a &lt;receiver&gt; tag in AndroidManifest.xml.
- */
 public class AudioBecomingNoisyReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context ctx, Intent intent) {

@@ -2,11 +2,6 @@ package cn.edu.bjtu.xsbb.listener;
 
 import cn.edu.bjtu.xsbb.entity.TrackInfo;
 
-/**
- * 定义音乐回放时一系列状态变化时的回调接口
- * 
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public interface OnPlaybackStateChangeListener {
 	/** 音乐开始播放时调用此方法 */
 	public abstract void onMusicPlayed();

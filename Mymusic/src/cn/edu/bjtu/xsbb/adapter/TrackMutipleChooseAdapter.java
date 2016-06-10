@@ -15,9 +15,6 @@ import android.widget.TextView;
 import cn.edu.bjtu.xsbb.entity.TrackInfo;
 import cn.edu.bjtu.xsbb.mymusic.R;
 
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class TrackMutipleChooseAdapter extends BaseAdapter {
 
 	/** 数据源 */

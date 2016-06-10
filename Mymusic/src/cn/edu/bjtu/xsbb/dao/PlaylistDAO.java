@@ -10,22 +10,11 @@ import android.provider.MediaStore.Audio.Media;
 import android.provider.MediaStore.Audio.Playlists;
 import android.util.Log;
 
-/**
- * 对“播放列表”相关的数据库访问进行的封装类
- * 
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class PlaylistDAO {
 	public static final String TAG = PlaylistDAO.class.getSimpleName();
 
 	/**
 	 * 新建无重名的播放列表
-	 * 
-	 * @param resolver
-	 *            Context的ContentResolver实例
-	 * @param name
-	 *            新建的播放列表的名称
-	 * @return 如果有重名的播放列表，返回-1；无重名返回新建列表在数据库中的ID
 	 */
 	public static int createPlaylist(ContentResolver resolver, String name) {
 		// 先检查有无同名的播放列表
@@ -59,12 +48,6 @@ public class PlaylistDAO {
 
 	/**
 	 * 重命名播放列表，如果重名不执行修改
-	 * 
-	 * @param resolver
-	 *            Context的ContentResolver实例
-	 * @param newName
-	 *            新建的播放列表的名称
-	 * @return 如果有重名的播放列表，返回true；无重名返回false
 	 */
 	public static boolean updatePlaylistName(ContentResolver resolver,
 			String newName, int playlistId) {
@@ -95,11 +78,6 @@ public class PlaylistDAO {
 
 	/**
 	 * 删除指定的播放列表
-	 * 
-	 * @param resolver
-	 *            Context的ContentResolver实例
-	 * @param playlistId
-	 *            要删除的播放列表的id
 	 */
 	public static void deletePlaylist(ContentResolver resolver, int playlistId) {
 		// 先删除Members表中的记录
@@ -116,14 +94,6 @@ public class PlaylistDAO {
 
 	/**
 	 * 为播放列表添加成员
-	 * 
-	 * @param resolver
-	 *            Context的ContentResolver实例
-	 * @param playlistId
-	 *            播放列表的ID
-	 * @param audioIds
-	 *            添加的音频ID们
-	 * @return true表示该歌曲已经存在指定列表中，false表示添加成功
 	 */
 	public static boolean addTrackToPlaylist(ContentResolver resolver,
 			long playlistId, long[] audioIds) {
@@ -203,14 +173,6 @@ public class PlaylistDAO {
 
 	/**
 	 * 从播放列表移除指定歌曲
-	 * 
-	 * @param resolver
-	 *            Context的ContentResolver实例
-	 * @param playlistId
-	 *            播放列表的ID
-	 * @param audioIds
-	 *            要移除的音频ID
-	 * @return 删除成功返回true,否则返回false
 	 */
 
 	public static boolean removeTrackFromPlaylist(ContentResolver resolver,
@@ -242,11 +204,6 @@ public class PlaylistDAO {
 
 	/**
 	 * 获取播放列表里的歌曲数目
-	 * 
-	 * @param resolver
-	 *            Context的ContentResolver实例
-	 * @param playlistId
-	 *            播放列表的ID
 	 */
 	public static int getPlaylistMemberCount(ContentResolver resolver,
 			int playlistId) {
@@ -264,8 +221,6 @@ public class PlaylistDAO {
 
 	/**
 	 * 删除指定路径的文件
-	 * 
-	 * @return 删除成功返回true, 删除失败false.
 	 */
 	public static boolean deleteFile(String path) {
 		boolean isDeleted = false;
@@ -279,9 +234,6 @@ public class PlaylistDAO {
 
 	/**
 	 * 批量删除指定文件
-	 * 
-	 * @param 要删除的文件路径数组
-	 * @return 路径数组不为空即返回true
 	 */
 	public static boolean deleteFiles(String[] paths) {
 		if (paths == null) {
@@ -297,8 +249,6 @@ public class PlaylistDAO {
 
 	/**
 	 * 从数据库中移除指定的音频
-	 * 
-	 * @return 移除成功返回true, 删除失败false.
 	 */
 	public static boolean removeTrackFromDatabase(ContentResolver resolver,
 			long[] audioIds) {

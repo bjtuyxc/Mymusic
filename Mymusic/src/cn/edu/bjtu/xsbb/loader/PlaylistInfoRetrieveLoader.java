@@ -13,10 +13,6 @@ import android.util.Log;
 import cn.edu.bjtu.xsbb.dao.PlaylistDAO;
 import cn.edu.bjtu.xsbb.entity.PlaylistInfo;
 
-
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class PlaylistInfoRetrieveLoader extends
 		AsyncTaskLoader<List<PlaylistInfo>> {
 	private final String TAG = PlaylistInfoRetrieveLoader.class.getSimpleName();

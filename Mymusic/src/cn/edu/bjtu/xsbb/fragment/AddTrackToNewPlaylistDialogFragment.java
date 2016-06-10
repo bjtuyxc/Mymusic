@@ -20,9 +20,6 @@ import cn.edu.bjtu.xsbb.dao.PlaylistDAO;
 
 import cn.edu.bjtu.xsbb.mymusic.R;
 
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class AddTrackToNewPlaylistDialogFragment extends DialogFragment {
 
 	private static final String TAG = AddTrackToNewPlaylistDialogFragment.class
@@ -38,15 +35,6 @@ public class AddTrackToNewPlaylistDialogFragment extends DialogFragment {
 
 	/**
 	 * 产生一个EditTextDialogFragment实例
-	 * 
-	 * @param title
-	 *            对话框的标题
-	 * @param content
-	 *            文本输入框预置内容
-	 * @param hint
-	 *            文本输入框提示信息
-	 * @param listner
-	 *            OnMyDialogInputListener实例，以接受输入事件的变化
 	 * */
 	public static AddTrackToNewPlaylistDialogFragment newInstance(long[] audioId) {
 		AddTrackToNewPlaylistDialogFragment f = new AddTrackToNewPlaylistDialogFragment();
@@ -121,9 +109,6 @@ public class AddTrackToNewPlaylistDialogFragment extends DialogFragment {
 
 	/**
 	 * 利用反射将父类mShowing变量设为false，表示对话框已关闭，父类不会再因为按了按钮而关闭对话框
-	 * 
-	 * @param isShown
-	 *            true表示点击按钮时对话框不会关闭，false为点击按钮对话框会关闭
 	 */
 	private void setWindowShownWhenClickedButton(boolean isShown) {
 		try {

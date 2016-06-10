@@ -13,9 +13,7 @@ import android.widget.TextView;
 
 import cn.edu.bjtu.xsbb.entity.PlaylistInfo;
 import cn.edu.bjtu.xsbb.mymusic.R;
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
+
 public class PlaylistAdapter extends BaseAdapter implements OnClickListener {
 	private List<PlaylistInfo> mData = null;
 	private Context mContext = null;

@@ -4,11 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.res.Resources;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.util.Pair;
@@ -19,15 +15,9 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
-
-import cn.edu.bjtu.xsbb.activity.FeedbackActivity;
 import cn.edu.bjtu.xsbb.activity.MainContentActivity;
-import cn.edu.bjtu.xsbb.activity.MyPreferenceActivity;
 import cn.edu.bjtu.xsbb.mymusic.R;
 
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class MenuFragment extends ListFragment {
 	private ListView mListView = null;
 
@@ -45,7 +35,7 @@ public class MenuFragment extends ListFragment {
 		String newContent = null;
 		switch (position) {
 		// 对应res/array.xml中选项的顺序
-		case 0:// TODO 本地音乐
+		case 0:// TODO 音乐
 			newContent = FrameLocalMusicFragment.class.getName();
 			break;
 		case 1:// TODO 歌手
@@ -54,22 +44,7 @@ public class MenuFragment extends ListFragment {
 		case 2:// TODO 专辑
 			newContent = FrameAlbumFragment.class.getName();
 			break;
-		case 3:// TODO 文件夹
-			newContent = FrameFolderFragment.class.getName();
-			break;
-		case 4:// TODO 收藏列表
-			newContent = FramePlaylistFragment.class.getName();
-			break;
-		case 5:// TODO 系统设置
-			startActivity(new Intent(getActivity(), MyPreferenceActivity.class));
-			return;
-		case 6:// TODO 意见反馈
-			startActivity(new Intent(getActivity(), FeedbackActivity.class));
-			break;
-		case 7:// TODO 支持作者
-			supportMe();
-			break;
-		case 8:// TODO 退出
+		case 3:// TODO 退出
 			((MainContentActivity) getActivity()).exit();
 			break;
 		}
@@ -78,32 +53,7 @@ public class MenuFragment extends ListFragment {
 		}
 	}
 
-	private void supportMe() {
-		new AlertDialog.Builder(getActivity())
-				.setMessage(R.string.support_developer)
-				.setPositiveButton(android.R.string.ok,
-						new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog,
-									int which) {
-								Uri uri = Uri
-										.parse(getString(R.string.my_alipay));
-								Intent intent = new Intent(Intent.ACTION_VIEW,
-										uri);
-								intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-								startActivity(intent);
-							}
-						})
-				.setNegativeButton(android.R.string.cancel,
-						new DialogInterface.OnClickListener() {
-
-							@Override
-							public void onClick(DialogInterface dialog,
-									int which) {
-								dialog.dismiss();
-							}
-						}).create().show();
-	}
+	
 
 	// the meat of switching the above fragment
 	private void switchFragment(String fragment) {

@@ -11,10 +11,6 @@ import android.support.v4.app.FragmentActivity;
 import com.google.analytics.tracking.android.EasyTracker;
 import cn.edu.bjtu.xsbb.mymusic.R;
 
-
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class SplashActivity extends FragmentActivity {
 
 	private MyHandler mHandler = new MyHandler(this);

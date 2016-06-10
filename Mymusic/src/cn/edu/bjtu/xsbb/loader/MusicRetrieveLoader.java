@@ -14,10 +14,7 @@ import android.support.v4.content.AsyncTaskLoader;
 import android.util.Log;
 
 import cn.edu.bjtu.xsbb.entity.TrackInfo;
-
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
+ 
 public class MusicRetrieveLoader extends AsyncTaskLoader<List<TrackInfo>> {
 	private final String TAG = MusicRetrieveLoader.class.getSimpleName();
 

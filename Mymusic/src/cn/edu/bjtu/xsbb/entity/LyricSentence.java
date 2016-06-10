@@ -1,10 +1,5 @@
 package cn.edu.bjtu.xsbb.entity;
 
-/**
- * 歌词句子，是一个时间戳和一行歌词组成，如“[00.03.21.56]还记得许多年前的春天”
- * 
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class LyricSentence {
 
 	/** 歌詞文本的开始时间戳转换为毫秒数的值，如[00.01.02.34]为62340毫秒 */
@@ -13,7 +8,7 @@ public class LyricSentence {
 	/** 一句歌词的实现 */
 	private long duringTime = 0;
 
-	/** 每个时间戳对应的一行歌词文本,如“[00.03.21.56]还记得许多年前的春天”中的“还记得许多年前的春天” */
+	/** 每个时间戳对应的一行歌词文本*/
 	private String contentText = "";
 
 	public LyricSentence(long time, String text) {

@@ -29,10 +29,6 @@ import cn.edu.bjtu.xsbb.util.Constant;
 import com.google.analytics.tracking.android.EasyTracker;
 import cn.edu.bjtu.xsbb.mymusic.R;
 
-
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class FolderChooseActivity extends FragmentActivity {
 	private final String TAG = FolderChooseActivity.class.getSimpleName();
 	private ImageView mView_Close = null;

@@ -16,9 +16,6 @@ import android.util.Log;
 
 import cn.edu.bjtu.xsbb.entity.TrackInfo;
 
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class PlaylistMemberRetrieveLoader extends
 		AsyncTaskLoader<List<TrackInfo>> {
 	private final String TAG = PlaylistMemberRetrieveLoader.class

@@ -13,9 +13,7 @@ import android.util.Log;
 
 import cn.edu.bjtu.xsbb.entity.AlbumInfo;
 
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
+
 public class AlbumInfoRetrieveLoader extends AsyncTaskLoader<List<AlbumInfo>> {
 	private final String TAG = AlbumInfoRetrieveLoader.class.getSimpleName();
 
@@ -80,8 +78,6 @@ public class AlbumInfoRetrieveLoader extends AsyncTaskLoader<List<AlbumInfo>> {
 	public void deliverResult(List<AlbumInfo> data) {
 		Log.i(TAG, "deliverResult");
 		if (isReset()) {
-			// An async query came in while the loader is stopped. We
-			// don't need the result.
 			if (data != null) {
 				onReleaseResources(data);
 			}
@@ -90,14 +86,9 @@ public class AlbumInfoRetrieveLoader extends AsyncTaskLoader<List<AlbumInfo>> {
 		mArtistInfoList = data;
 
 		if (isStarted()) {
-			// If the Loader is currently started, we can immediately
-			// deliver its results.
 			super.deliverResult(data);
 		}
 
-		// At this point we can release the resources associated with
-		// 'oldApps' if needed; now that the new result is delivered we
-		// know that it is no longer in use.
 		if (oldList != null) {
 			onReleaseResources(oldList);
 		}
@@ -105,20 +96,16 @@ public class AlbumInfoRetrieveLoader extends AsyncTaskLoader<List<AlbumInfo>> {
 
 	protected void onReleaseResources(List<AlbumInfo> data) {
 		Log.i(TAG, "onReleaseResources");
-		// For a simple List<> there is nothing to do. For something
-		// like a Cursor, we would close it here.
 	}
 
 	@Override
 	protected void onStartLoading() {
 		Log.i(TAG, "onStartLoading");
 		if (mArtistInfoList != null) {
-			// If we currently have a result available, deliver it
-			// immediately.
+
 			deliverResult(mArtistInfoList);
 		}
-		// If the data has changed since the last time it was loaded
-		// or is not currently available, start a load.
+
 		forceLoad();
 	}
 
@@ -126,7 +113,6 @@ public class AlbumInfoRetrieveLoader extends AsyncTaskLoader<List<AlbumInfo>> {
 	protected void onStopLoading() {
 		Log.i(TAG, "onStartLoading");
 		super.onStopLoading();
-		// Attempt to cancel the current load task if possible.
 		cancelLoad();
 	}
 
@@ -134,8 +120,6 @@ public class AlbumInfoRetrieveLoader extends AsyncTaskLoader<List<AlbumInfo>> {
 	public void onCanceled(List<AlbumInfo> data) {
 		super.onCanceled(data);
 		Log.i(TAG, "onCanceled");
-		// At this point we can release the resources associated with 'data'
-		// if needed.
 		onReleaseResources(data);
 	}
 
@@ -143,11 +127,7 @@ public class AlbumInfoRetrieveLoader extends AsyncTaskLoader<List<AlbumInfo>> {
 	protected void onReset() {
 		super.onReset();
 		Log.i(TAG, "onReset");
-		// Ensure the loader is stopped
 		onStopLoading();
-
-		// At this point we can release the resources associated with 'data'
-		// if needed.
 		if (mArtistInfoList != null) {
 			onReleaseResources(mArtistInfoList);
 			mArtistInfoList = null;
@@ -156,7 +136,6 @@ public class AlbumInfoRetrieveLoader extends AsyncTaskLoader<List<AlbumInfo>> {
 
 	@Override
 	protected void onForceLoad() {
-		// TODO Auto-generated method stub
 		super.onForceLoad();
 	}
 

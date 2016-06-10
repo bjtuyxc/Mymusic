@@ -15,9 +15,7 @@ import android.widget.TextView;
 import cn.edu.bjtu.xsbb.entity.LyricSentence;
 
 import cn.edu.bjtu.xsbb.mymusic.R;
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
+
 public class LyricAdapter extends BaseAdapter {
 	private static final String TAG = LyricAdapter.class.getSimpleName();
 

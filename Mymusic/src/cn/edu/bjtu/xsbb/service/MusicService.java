@@ -67,11 +67,6 @@ import cn.edu.bjtu.xsbb.util.AudioFocusHelper.MusicFocusable;
 import cn.edu.bjtu.xsbb.util.LyricLoadHelper.LyricListener;
 import cn.edu.bjtu.xsbb.mymusic.R;
 
-/**
- * 这是处理音乐回放的服务，在应用中对媒体的所有处理都交给这个服务。
- * 
- * @author lq 2013-6-1 lq2625304@gmail.com
- */
 public class MusicService extends Service implements OnCompletionListener,
 		OnPreparedListener, OnErrorListener, MusicFocusable, LyricListener {
 
@@ -97,9 +92,6 @@ public class MusicService extends Service implements OnCompletionListener,
 
 		/**
 		 * 让MediaPlayer将当前播放跳转到指定播放位置
-		 * 
-		 * @param milliSeconds
-		 *            指定的已播放的毫秒数
 		 * */
 		public void seekToSpecifiedPosition(int milliSeconds) {
 			if (mState != State.Stopped) {
@@ -134,9 +126,6 @@ public class MusicService extends Service implements OnCompletionListener,
 
 		/**
 		 * 设置当前的播放列表
-		 * 
-		 * @param list
-		 *            播放列表,每项包含每首歌曲的详细信息
 		 * */
 		public void setCurrentPlayList(List<TrackInfo> list) {
 			mPlayList.clear();
@@ -630,9 +619,6 @@ public class MusicService extends Service implements OnCompletionListener,
 
 	/**
 	 * 播放上一首歌曲。根据播放模式计算出上一首歌的ID，然后调用播放方法。
-	 * 
-	 * @param fromUser
-	 *            是否是来自用户的请求
 	 * */
 	private void processPreviousRequest(boolean fromUser) {
 		if (mState == State.Playing || mState == State.Paused
@@ -671,9 +657,6 @@ public class MusicService extends Service implements OnCompletionListener,
 
 	/**
 	 * 播放下一首歌曲。根据播放模式计算出下一首歌的ID，然后调用播放方法
-	 * 
-	 * @param fromUser
-	 *            是否是来自用户的请求
 	 * */
 	private void processNextRequest(boolean fromUser) {
 		if (mState == State.Playing || mState == State.Paused
@@ -742,9 +725,6 @@ public class MusicService extends Service implements OnCompletionListener,
 
 	/**
 	 * 释放本服务所使用的资源，包括“前台服务”状态，通知，唤醒锁，和MediaPlayer
-	 * 
-	 * @param releaseMediaPlayer
-	 *            指示MediaPlayer是否要释放掉
 	 */
 	private void relaxResources(boolean releaseMediaPlayer) {
 		// 取消 "foreground service"的状态
@@ -864,12 +844,6 @@ public class MusicService extends Service implements OnCompletionListener,
 
 	/**
 	 * 根据歌曲的ID，寻找出歌曲在当前播放列表中的位置
-	 * 
-	 * @param list
-	 *            歌曲列表
-	 * @param songId
-	 *            歌曲ID
-	 * @return 返回-1表示未找到
 	 */
 	public static int seekPosInListById(List<TrackInfo> list, long songId) {
 		int result = -1;
@@ -909,9 +883,6 @@ public class MusicService extends Service implements OnCompletionListener,
 
 	/**
 	 * 读取歌词文件
-	 * 
-	 * @param path
-	 *            歌曲文件的路径
 	 */
 	private void loadLyric(String path) {
 		// 取得歌曲同目录下的歌词文件绝对路径

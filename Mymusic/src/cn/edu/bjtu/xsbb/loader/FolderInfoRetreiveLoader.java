@@ -21,9 +21,6 @@ import cn.edu.bjtu.xsbb.util.Constant;
 
 import cn.edu.bjtu.xsbb.mymusic.R;
 
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class FolderInfoRetreiveLoader extends AsyncTaskLoader<List<FolderInfo>> {
 	private final String TAG = this.getClass().getSimpleName();
 	private ContentResolver mContentResolver = null;
@@ -40,12 +37,6 @@ public class FolderInfoRetreiveLoader extends AsyncTaskLoader<List<FolderInfo>> 
 			+ " = " + FileColumns.MEDIA_TYPE_AUDIO + " and " + "("
 			+ FileColumns.DATA + " like'%.mp3' or " + Media.DATA
 			+ " like'%.wma')");
-	// private String mSelection = FileColumns.MEDIA_TYPE + " = "
-	// + FileColumns.MEDIA_TYPE_AUDIO + " and " + "(" + FileColumns.DATA
-	// + " like'%.mp3' or " + Media.DATA + " like'%.wma') and "
-	// + Media.DURATION + " > " + 1000 * 60 * 1 + " and "
-	// + FileColumns.SIZE + " > " + 1024 + " ) " + " group by ( "
-	// + FileColumns.PARENT;
 	private String[] mSelectionArgs = null;
 	private String mSortOrder = null;
 
@@ -123,8 +114,6 @@ public class FolderInfoRetreiveLoader extends AsyncTaskLoader<List<FolderInfo>> 
 	public void deliverResult(List<FolderInfo> data) {
 		Log.i(TAG, "deliverResult");
 		if (isReset()) {
-			// An async query came in while the loader is stopped. We
-			// don't need the result.
 			if (data != null) {
 				onReleaseResources(data);
 			}
@@ -133,14 +122,9 @@ public class FolderInfoRetreiveLoader extends AsyncTaskLoader<List<FolderInfo>> 
 		mArtistInfoList = data;
 
 		if (isStarted()) {
-			// If the Loader is currently started, we can immediately
-			// deliver its results.
 			super.deliverResult(data);
 		}
 
-		// At this point we can release the resources associated with
-		// 'oldApps' if needed; now that the new result is delivered we
-		// know that it is no longer in use.
 		if (oldList != null) {
 			onReleaseResources(oldList);
 		}
@@ -148,20 +132,14 @@ public class FolderInfoRetreiveLoader extends AsyncTaskLoader<List<FolderInfo>> 
 
 	protected void onReleaseResources(List<FolderInfo> data) {
 		Log.i(TAG, "onReleaseResources");
-		// For a simple List<> there is nothing to do. For something
-		// like a Cursor, we would close it here.
 	}
 
 	@Override
 	protected void onStartLoading() {
 		Log.i(TAG, "onStartLoading");
 		if (mArtistInfoList != null) {
-			// If we currently have a result available, deliver it
-			// immediately.
 			deliverResult(mArtistInfoList);
 		}
-		// If the data has changed since the last time it was loaded
-		// or is not currently available, start a load.
 		forceLoad();
 	}
 
@@ -169,7 +147,6 @@ public class FolderInfoRetreiveLoader extends AsyncTaskLoader<List<FolderInfo>> 
 	protected void onStopLoading() {
 		Log.i(TAG, "onStartLoading");
 		super.onStopLoading();
-		// Attempt to cancel the current load task if possible.
 		cancelLoad();
 	}
 
@@ -177,8 +154,6 @@ public class FolderInfoRetreiveLoader extends AsyncTaskLoader<List<FolderInfo>> 
 	public void onCanceled(List<FolderInfo> data) {
 		super.onCanceled(data);
 		Log.i(TAG, "onCanceled");
-		// At this point we can release the resources associated with 'data'
-		// if needed.
 		onReleaseResources(data);
 	}
 
@@ -186,11 +161,7 @@ public class FolderInfoRetreiveLoader extends AsyncTaskLoader<List<FolderInfo>> 
 	protected void onReset() {
 		super.onReset();
 		Log.i(TAG, "onReset");
-		// Ensure the loader is stopped
 		onStopLoading();
-
-		// At this point we can release the resources associated with 'data'
-		// if needed.
 		if (mArtistInfoList != null) {
 			onReleaseResources(mArtistInfoList);
 			mArtistInfoList = null;
