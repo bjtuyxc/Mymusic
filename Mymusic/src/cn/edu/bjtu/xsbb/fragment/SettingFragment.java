@@ -10,8 +10,9 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
-import cn.edu.bjtu.xsbb.util.Constant;
 import cn.edu.bjtu.xsbb.mymusic.R;
+import cn.edu.bjtu.xsbb.util.Constant;
+
 
 public class SettingFragment extends PreferenceFragment implements
 		OnSharedPreferenceChangeListener {

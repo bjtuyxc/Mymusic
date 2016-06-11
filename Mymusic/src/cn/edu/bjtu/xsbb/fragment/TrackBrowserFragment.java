@@ -1,5 +1,6 @@
 package cn.edu.bjtu.xsbb.fragment;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -23,6 +24,7 @@ import android.os.Environment;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore.Audio.Media;
+import android.provider.MediaStore.Audio.Playlists;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
@@ -60,10 +62,9 @@ import android.widget.PopupMenu;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import cn.edu.bjtu.xsbb.activity.MainContentActivity;
-import cn.edu.bjtu.xsbb.activity.MutipleEditActivity;
 import cn.edu.bjtu.xsbb.activity.MainContentActivity.OnBackKeyPressedListener;
+import cn.edu.bjtu.xsbb.activity.MutipleEditActivity;
 import cn.edu.bjtu.xsbb.adapter.TrackAdapter;
 import cn.edu.bjtu.xsbb.dao.PlaylistDAO;
 import cn.edu.bjtu.xsbb.entity.AlbumInfo;
@@ -71,11 +72,11 @@ import cn.edu.bjtu.xsbb.entity.ArtistInfo;
 import cn.edu.bjtu.xsbb.entity.TrackInfo;
 import cn.edu.bjtu.xsbb.listener.OnPlaybackStateChangeListener;
 import cn.edu.bjtu.xsbb.loader.MusicRetrieveLoader;
+import cn.edu.bjtu.xsbb.mymusic.R;
 import cn.edu.bjtu.xsbb.service.MusicService;
 import cn.edu.bjtu.xsbb.service.MusicService.MusicPlaybackLocalBinder;
 import cn.edu.bjtu.xsbb.util.Constant;
 import cn.edu.bjtu.xsbb.util.StringHelper;
-import cn.edu.bjtu.xsbb.mymusic.R;
 
 public class TrackBrowserFragment extends Fragment implements
 		LoaderManager.LoaderCallbacks<List<TrackInfo>>, OnItemClickListener,
@@ -603,7 +604,54 @@ public class TrackBrowserFragment extends Fragment implements
 		mView_KeyboardSwitcher.setOnClickListener(searchbarClickListner);
 		mView_SearchInput.setOnClickListener(searchbarClickListner);
 
-		
+		// T9键盘的设置---------------------------------------------------------------
+		// 加载布局
+		ViewGroup t9Layout = (ViewGroup) LayoutInflater.from(getActivity())
+				.inflate(R.layout.t9_keyboard, null, false);
+		t9Layout.findViewById(R.id.t9_key_2).setOnClickListener(
+				mT9KeyClickedListener);
+		t9Layout.findViewById(R.id.t9_key_3).setOnClickListener(
+				mT9KeyClickedListener);
+		t9Layout.findViewById(R.id.t9_key_4).setOnClickListener(
+				mT9KeyClickedListener);
+		t9Layout.findViewById(R.id.t9_key_5).setOnClickListener(
+				mT9KeyClickedListener);
+		t9Layout.findViewById(R.id.t9_key_6).setOnClickListener(
+				mT9KeyClickedListener);
+		t9Layout.findViewById(R.id.t9_key_7).setOnClickListener(
+				mT9KeyClickedListener);
+		t9Layout.findViewById(R.id.t9_key_8).setOnClickListener(
+				mT9KeyClickedListener);
+		t9Layout.findViewById(R.id.t9_key_9).setOnClickListener(
+				mT9KeyClickedListener);
+		t9Layout.findViewById(R.id.t9_exit).setOnClickListener(
+				mT9KeyClickedListener);
+		View deleteKey = t9Layout.findViewById(R.id.t9_delete);
+		deleteKey.setOnClickListener(mT9KeyClickedListener);
+		deleteKey.setOnLongClickListener(new OnLongClickListener() {
+			@Override
+			public boolean onLongClick(View v) {
+				// 长按删除，删除所有输入内容
+				Editable et = mView_SearchInput.getText();
+				if (!et.toString().equals("")) {
+					et.clear();
+					mView_SearchInput.setText(et);
+					mView_SearchInput.setSelection(0);
+					return true;
+				}
+				return false;
+			}
+		});
+
+		// 设置T9键盘弹出窗口属性
+		mT9KeyBoardWindow = new PopupWindow(getActivity());
+		mT9KeyBoardWindow.setOutsideTouchable(false);
+		mT9KeyBoardWindow.setWidth(LayoutParams.MATCH_PARENT);
+		mT9KeyBoardWindow.setHeight(LayoutParams.WRAP_CONTENT);
+		mT9KeyBoardWindow.setFocusable(true);
+		mT9KeyBoardWindow.setContentView(t9Layout);
+		mT9KeyBoardWindow.setAnimationStyle(R.style.t9_window_anim);
+
 		// 搜索输入框文本变化监听
 		mView_SearchInput.addTextChangedListener(new TextWatcher() {
 
@@ -644,6 +692,48 @@ public class TrackBrowserFragment extends Fragment implements
 		mView_TrackOperations.setVisibility(View.GONE);
 		mView_MoreFunctions.setClickable(false);
 	}
+
+	/** T9键盘按键处理 */
+	private OnClickListener mT9KeyClickedListener = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			switch (v.getId()) {
+			case R.id.t9_key_2:
+				appendImageSpan(R.drawable.keyboard_edit_2, 2);
+				break;
+			case R.id.t9_key_3:
+				appendImageSpan(R.drawable.keyboard_edit_3, 3);
+				break;
+			case R.id.t9_key_4:
+				appendImageSpan(R.drawable.keyboard_edit_4, 4);
+				break;
+			case R.id.t9_key_5:
+				appendImageSpan(R.drawable.keyboard_edit_5, 5);
+				break;
+			case R.id.t9_key_6:
+				appendImageSpan(R.drawable.keyboard_edit_6, 6);
+				break;
+			case R.id.t9_key_7:
+				appendImageSpan(R.drawable.keyboard_edit_7, 7);
+				break;
+			case R.id.t9_key_8:
+				appendImageSpan(R.drawable.keyboard_edit_8, 8);
+				break;
+			case R.id.t9_key_9:
+				appendImageSpan(R.drawable.keyboard_edit_9, 9);
+				break;
+			case R.id.t9_exit:
+				mT9KeyBoardWindow.dismiss();
+				break;
+			case R.id.t9_delete:
+				backDeleteImageSpan();
+				break;
+			default:
+				break;
+			}
+		}
+	};
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
@@ -688,6 +778,7 @@ public class TrackBrowserFragment extends Fragment implements
 				.getMenuInfo();
 		Log.i(TAG, "menuInfo:" + menuInfo);
 		switch (item.getItemId()) {
+		
 		case CONTEXT_MENU_CHECK_DETAIL:
 			// 弹出歌曲详细信息的窗口
 			df = TrackDetailDialogFragment.newInstance(mAdapter
@@ -1039,6 +1130,7 @@ public class TrackBrowserFragment extends Fragment implements
 			switch (getArguments().getInt(Constant.PARENT)) {
 			case Constant.START_FROM_PLAYLIST:
 				// 从播放列表移除歌曲，不会删除文件
+				
 				if (isDeleted) {
 					// 提示删除成功
 					Toast.makeText(getActivity(),

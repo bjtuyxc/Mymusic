@@ -20,9 +20,6 @@ import android.content.Context;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-/**
- * @author lq 2013-6-1 lq2625304@gmail.com
- * */
 public class LyricDownloadManager {
 	private static final String TAG = LyricDownloadManager.class
 			.getSimpleName();
