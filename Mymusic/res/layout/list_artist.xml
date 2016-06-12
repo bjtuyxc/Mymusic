@@ -16,8 +16,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/top"
+        android:background="@color/holo_purple"
         android:cacheColorHint="#00000000"
         android:fastScrollEnabled="true" >
+
     </ListView>
 
 </RelativeLayout>

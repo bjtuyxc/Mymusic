@@ -149,7 +149,9 @@
             android:layout_height="match_parent"
             android:layout_above="@id/bottom_bar"
             android:layout_alignParentTop="true"
+            android:background="@color/holo_purple"
             android:cacheColorHint="#00000000" >
+
         </ListView>
     </RelativeLayout>
 
