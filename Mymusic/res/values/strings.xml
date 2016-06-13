@@ -104,7 +104,7 @@
     <string name="search">查找</string>
     <string name="please_input_jianpin_or_quanpin">请输入简拼或全拼</string>
     <string name="please_input_song_or_artist_name">请输入歌曲名称或歌手名称</string>
-
+ 
     <!-- 多选界面界面 -->
     <string name="has_selected">已选</string>
     <string name="a_piece_of_song">首歌</string>

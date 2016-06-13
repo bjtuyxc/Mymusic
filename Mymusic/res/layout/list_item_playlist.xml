@@ -50,5 +50,63 @@
         android:textColor="@color/black"
         android:textIsSelectable="false"
         android:textSize="18sp" />
+      <FrameLayout
+        android:id="@+id/media_player"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="3dp"
+        android:background="@color/white_translucence" >
+ <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
+            <ImageView
+                android:id="@+id/album_font"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="left"
+                android:src="@drawable/album1" />
+
+            <TextView
+                android:id="@+id/song_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/album_font"
+                android:singleLine="true"
+                android:text="Counting Stars"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/song_name"
+                android:layout_centerVertical="true"
+                android:text="OneRepublic"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <ImageButton
+                android:id="@+id/play_pause"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="46dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/play" />
+
+            <ImageButton
+                android:id="@+id/next"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/forward" />
+        </RelativeLayout>
+         </FrameLayout>
 </RelativeLayout>
